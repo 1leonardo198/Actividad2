@@ -1,0 +1,26 @@
+// Código en Scilab para separar iterativamente las salidas de la compuerta AND
+
+// Definir las combinaciones de entrada para una compuerta AND de 2 entradas
+inputs = [0 0; 0 1; 1 0; 1 1];
+
+// Inicializar el vector de salidas
+outputs = [];
+
+disp("Iterando sobre las combinaciones de entrada:");
+
+for i = 1:size(inputs, 1)
+    // Calcular la salida de la compuerta AND
+    A = inputs(i, 1);
+    B = inputs(i, 2);
+    salida = A & B; // Operación AND
+
+    // Almacenar la salida en un vector
+    outputs(i) = salida;
+
+    // Mostrar el proceso iterativo
+    disp("Entrada: " + string(A) + ", " + string(B) + " => Salida: " + string(salida));
+end
+
+// Mostrar las salidas separadas
+disp("Salidas de la compuerta AND separadas:");
+disp(outputs);
